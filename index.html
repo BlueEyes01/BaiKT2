@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendors/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="all">
+        <div class="row align-content-center">
+            <div class="col col-xl-4 col-sm-12 ">
+
+                <div class="alert" role="alert">
+                    Thông tin xe cộ
+                </div>
+                <div class="thongtinxe">
+                    <div class="nhapthongtin">
+                        <label class="form-label">Tên xe <span>*</span> :</label>
+                        <input type="text" class="form-control">
+
+                        <label class="form-label">Hình ảnh:</label>
+                        <input type="text" class="form-control">
+
+                        <label>Hãng xe <span>*</span>:</label>
+                        <select id ="hangxe"class="form-select">
+                            <optgroup label="Swedish Cars">
+                                <option value="Volvo">Volvo</option>
+                                <option value="Saab">Saab</option>
+                            </optgroup>
+                            <optgroup label="German Cars">
+                                <option value="Mercedes">Mercedes</option>
+                                <option value="Audi">Audi</option>
+                            </optgroup>
+                        </select>
+
+                        <label class="form-label">Giá tiền <span>*</span> :</label>
+                        <input type="number" class="form-control">
+
+                        <label class="form-label">Mô tả :</label>
+                        <div class="form-floating">
+                            <textarea id ="mota" class="form-control" id="floatingTextarea2"  style="height: 150px"></textarea>
+                        </div>
+
+                        <label class="form-label"> Người liên hệ <span>*</span>:</label>
+                        <input type="text" class="form-control">
+
+                        <label class="form-label">Số điện thoại người liên hệ <span>*</span>:</label>
+                        <input type="text" class="form-control">
+
+                        <label class="form-label">Email <span>*</span>:</label>
+                        <input type="email" class="form-control" id="email">
+
+                        <button onclick="send()" type="button" class="btn btn-success">Lưu</button>
+                        <button onclick ="xoa()" type="button" class="btn btn-warning">Xóa</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-xl-8 col-sm-12">
+                <div class="qlxeco">
+                    <div class="alert" role="alert">
+                        Quản lý danh sách xe cộ
+                    </div>
+
+                    <input type="text" class="form-control" placeholder="Tìm kiếm ...">
+
+
+                    <table id = "table" class="table table-bordered ">
+                        <thead>
+                            <tr>
+                                <th scope="col">STT</th>
+                                <th scope="col">Hình ảnh</th>
+                                <th scope="col">Tên xe</th>
+                                <th scope="col">Hãng xe</th>
+                                <th scope="col">Giá tiền</th>
+                                <th scope="col">Người liên hệ</th>
+                                <th scope="col">Điện thoại</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="resources/js/main.js"></script>
+    <script src="vendors/js/jquery-3.6.0.js"></script>
+    <script src="vendors/js/bootstrap.js"></script>
+</body>
+
+</html>

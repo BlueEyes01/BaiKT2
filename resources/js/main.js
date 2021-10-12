@@ -31,6 +31,19 @@ function xoaalltb()
     
 }
 
+function xoaalltk()
+{
+    if (dem>0)
+    {
+        for(var i = 0;i < dem;i++)
+        {
+            var a = document.getElementById("tr"+id[i]);
+            a.remove();
+        }
+        id = [];
+    }
+}
+
 function loadTB ()
 {   
     for (var i = 0 ; i< xe.length ; i++)
@@ -115,10 +128,20 @@ function send() {
 function xoaxe(a)
 { 
     xe.splice(a,1);
-    
-    xoaalltb();
-    sl--;
-    loadTB();   
+    var arr = document.getElementsByTagName("input");
+
+    if (arr[6].value =="")
+    {
+        xoaalltb();
+        sl--;
+        loadTB();  
+        id=[];
+    }
+    else
+    {
+        sl--;
+        timkiem(arr[6])
+    } 
 }
 
 function xoa()
@@ -130,7 +153,6 @@ function xoa()
     }
  
     var arr = document.getElementsByTagName("input");
-
     arr[0].value="";
     arr[1].value="";
     arr[2].value="";
@@ -153,19 +175,11 @@ function timkiem(x)
     var arr = [];
     
 
-    if(x.value!="")
+    if(x.value !="")
     {
         var regex = new RegExp(x.value)
-        
-        if (dem>0)
-        {
-            for(var i = 0;i < dem;i++)
-            {
-                var a = document.getElementById("tr"+id[i]);
-                a.remove();
-            }
-            id = [];
-        }
+
+        xoaalltk();
 
         for (var i = 0; i < sl; i++)
         {
@@ -185,7 +199,7 @@ function timkiem(x)
 
         dem = arr.length;
         
-        for (var i = 0 ; i< arr.length ; i++)
+        for (var i = 0 ; i< dem ; i++)
         {
             var tb = "<tr onclick = 'clicktb(this)' id = 'tr"+id[i]+"'><td>"+id[i]+"</td>"+"<td> <img id = 'anh"+id[i]+"' src = '"+arr[i].hinhAnh+"' width = '200px'></td>"+"<td>"+arr[i].tenXe+"</td>"+"<td>"+arr[i].hangXe+"</td>"+"<td>"+arr[i].giaTien+"</td>"+"<td>"+arr[i].nguoiLH+"</td>"+"<td>"+arr[i].sdtNLH+"</td>" +"<td>"+arr[i].email+"</td></tr>";
             document.getElementById("table").insertAdjacentHTML("beforeend", tb);
@@ -195,15 +209,7 @@ function timkiem(x)
 
     else 
     {
-        if (dem>0)
-        {
-            for(var i = 0;i < dem ;i++)
-            {
-                var a = document.getElementById("tr"+id[i]);
-                a.remove();
-            }
-        }
-        id = [];
+        xoaalltk()
         dem=0;
         loadTB();
         tk=true;

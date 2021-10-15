@@ -104,7 +104,7 @@ function send() {
     //     return;
     // }
 
-    // var reg = /^[a-zA-Z][a-zA-Z0-9\_]+@[a-zA-Z]+(\.[a-zA-Z]+){1,3}$/;
+    // var reg = /^[a-zA-Z0-9][a-zA-Z0-9\_]+@[a-zA-Z]+(\.[a-zA-Z]+){1,3}$/;
     // if(!reg.test(email))
     // {
     //     alert("Emal không hợp lệ");

@@ -11,15 +11,20 @@
     border: solid 1px;
     border-radius: 3px;
     border-color: rgba(0,0,0,0.3);
+    
+}
+.trai
+{
+    padding-top: 10px;
 }
 .qlxeco
 {
     border-radius: 3px;
+    padding-top: 10px;
 }
-
 .all 
 {
-    margin-top: 50px;
+    margin-top: 40px;
     margin-right: 50px;
     margin-left: 50px;
 }

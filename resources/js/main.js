@@ -86,37 +86,39 @@ function send() {
     var moTa = document.getElementById("mota").value;
     var hangXe = document.getElementById("hangxe").value;
 
-    // if (tenXe == "" || giaTien == "" || nguoiLH == "" || sdtNLH == "" || email == "" )
-    // {
-    //     alert("Nhập tất cả ô có dấu *");
-    //    return;
-    // }
+    if (tenXe == "" || giaTien == "" || nguoiLH == "" || sdtNLH == "" || email == "" )
+    {
+        alert("Nhập tất cả ô có dấu *");
+       return;
+    }
 
-    // if (isNaN(sdtNLH))
-    // {
-    //     alert("SĐT không hợp lệ");
-    //     return;
-    // }
+    if (isNaN(sdtNLH))
+    {
+        alert("SĐT không hợp lệ");
+        return;
+    }
 
-    // if(giaTien<0)
-    // {
-    //     alert("Giá tiền không hợp lệ");
-    //     return;
-    // }
+    if(giaTien<=0)
+    {
+        alert("Giá tiền không hợp lệ");
+        return;
+    }
 
-    // var reg = /^[a-zA-Z0-9][a-zA-Z0-9\_]+@[a-zA-Z]+(\.[a-zA-Z]+){1,3}$/;
-    // if(!reg.test(email))
-    // {
-    //     alert("Emal không hợp lệ");
-    //     return;
-    // }
+    var reg1 = /^(\+84)\d{9,}$/
+    if(!reg1.test(sdtNLH))
+    {
+        alert("SĐT không hợp lệ");
+        return;
+    }
 
-    // var reg1 = /^(\+84)\d{9,}$/
-    // if(!reg1.test(sdtNLH))
-    // {
-    //     alert("SĐT không hợp lệ");
-    //     return;
-    // }
+    var reg = /^[a-zA-Z0-9][a-zA-Z0-9\_]+@[a-zA-Z]+(\.[a-zA-Z]+){1,3}$/;
+    if(!reg.test(email))
+    {
+        alert("Emal không hợp lệ");
+        return;
+    }
+
+   
 
     xe[sl] = new  qlxe(tenXe, hinhAnh, hangXe, giaTien, nguoiLH, sdtNLH, email, moTa);
     
